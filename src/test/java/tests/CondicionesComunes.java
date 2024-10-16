@@ -10,17 +10,17 @@ import org.testng.annotations.BeforeMethod;
 
 import java.util.ArrayList;
 
-public class Precondiciones {
-    private WebDriver driver;
+public class CondicionesComunes {
+    protected WebDriver driver;
     ArrayList<String> tabs;
     @BeforeMethod
     public void setUp() {
         DesiredCapabilities caps = new DesiredCapabilities();
         System.setProperty("webdriver.chrome.driver", "Drivers/chromedriver.exe");
-        driver = new ChromeDriver();
 //        ChromeOptions chromeOptions = new ChromeOptions();
 //        chromeOptions.addArguments("--headless");
 //        driver = new ChromeDriver(chromeOptions);
+        driver = new ChromeDriver();
         driver.navigate().to("https://practicetestautomation.com/practice-test-login/");
 //        JavascriptExecutor javascriptExecutor = (JavascriptExecutor)driver;
 //        String googleWindow = "window.open('https://www.google.com')";
@@ -33,8 +33,10 @@ public class Precondiciones {
         if(!result.isSuccess()){
             Screenshooter.takeScreenshot("Error", driver);
         }
-        driver.switchTo().window(tabs.get(1)).close();
-        driver.switchTo().window(tabs.get(0)).close();
+//        driver.switchTo().window(tabs.get(1)).close();
+//        driver.switchTo().window(tabs.get(0)).close();
+        driver.close();
+        driver.quit();
     }
 
 }

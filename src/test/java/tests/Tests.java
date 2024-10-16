@@ -1,11 +1,12 @@
 package tests;
 import helpers.WebDriverManager;
+import org.openqa.selenium.By;
 import org.testng.annotations.Test;
 import pages.PageLogin;
 import pages.PageLogon;
 import pages.PageinLogin;
 
-public class Login extends CondicionesComunes{
+public class Tests extends CondicionesComunes{
 
     @Test(description = "Login Incorrecto")
     public void pruebaUno() {

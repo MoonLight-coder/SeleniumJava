@@ -1,5 +1,4 @@
 pages\PageLogon.class
 pages\PageLogin.class
-tests\Tests.class
 pages\PageinLogin.class
 helpers\Helpers.class
